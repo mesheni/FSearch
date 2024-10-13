@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FSearch"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600"
-        Background="#302f2f">
+        Title="MainWindow" Height="400" Width="700"
+        Background="#302f2f" MinWidth="400" MinHeight="300">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -23,25 +23,38 @@
         </Grid.ColumnDefinitions>
 
         <!-- Label и ComboBox со списком дисков -->
-        <Label Content="Select Drive:" Grid.Row="0" Grid.Column="0" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-        <ComboBox x:Name="DriveComboBox" Grid.Row="0" Grid.Column="1" Width="auto" Margin="5,0"/>
+        <Label Content="Выберите диск:" Grid.Row="0" Grid.Column="0" Width="130" 
+               VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" 
+               Background="#302f2f" BorderThickness="0" HorizontalContentAlignment="Left"/>
+        <ComboBox x:Name="DriveComboBox" Grid.Row="0" Grid.Column="1" Width="auto" Margin="5,0"
+                  />
 
         <!-- Label и Button для выбора папки поиска -->
-        <Label Content="Select Folder:" Grid.Row="1" Grid.Column="0" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-        <TextBox x:Name="FolderTextBox" Grid.Row="1" Grid.Column="1" IsReadOnly="True" Margin="5,5"/>
-        <Button Name="ButBrowseFolder" Content="Browse..." Grid.Row="1" Grid.Column="2" Margin="0,0" Width="100" Click="BrowseFolder_Click"/>
+        <Label Content="Выберите папку:" Grid.Row="1" Grid.Column="0" Width="130" 
+               VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" 
+               Background="#302f2f" BorderThickness="0" HorizontalContentAlignment="Left"/>
+        <TextBox x:Name="FolderTextBox" Grid.Row="1" Grid.Column="1" IsReadOnly="True" 
+                 Margin="5,5"/>
+        <Button Name="ButBrowseFolder" Content="Обзор..." Grid.Row="1" Grid.Column="2" 
+                Margin="0,0" Width="100" Click="BrowseFolder_Click"/>
 
         <!-- Label и TextBox для ввода имени искомого файла -->
-        <Label Content="File Name:" Grid.Row="2" Grid.Column="0" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-        <TextBox x:Name="FileNameTextBox" Grid.Row="2" Grid.Column="1" Margin="5,0"/>
+        <Label Content="Имя файла:" Grid.Row="2" Grid.Column="0" Width="130" 
+               VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" 
+               Background="#302f2f" BorderThickness="0" HorizontalContentAlignment="Left"/>
+        <TextBox x:Name="FileNameTextBox" Grid.Row="2" Grid.Column="1" Margin="5,0"
+                 />
 
         <!-- Кнопка поиска -->
-        <Button Name="ButSeach" Content="Search" Grid.Row="3" Grid.Column="1" Width="130" Margin="5,10" HorizontalAlignment="Center" Click="SearchButton_Click"/>
+        <Button Name="ButSeach" Content="Поиск" Grid.Row="3" Grid.Column="1" Width="130" 
+                Margin="5,10" HorizontalAlignment="Center" Click="SearchButton_Click"/>
 
         <!-- DataGrid для показа найденных файлов -->
-        <DataGrid x:Name="ResultsDataGrid" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,0" AutoGenerateColumns="True" Height="auto"/>
+        <DataGrid x:Name="ResultsDataGrid" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,0" 
+                  AutoGenerateColumns="True" Height="auto"/>
 
         <!-- ProgressBar -->
-        <ProgressBar x:Name="SearchProgressBar" Grid.Row="5" Grid.ColumnSpan="3" Height="20" Margin="0,10,0,0"/>
+        <ProgressBar x:Name="SearchProgressBar" Grid.Row="5" Grid.ColumnSpan="3" Height="20" 
+                     Margin="0,10,0,0"/>
     </Grid>
 </Window>
